@@ -49,6 +49,16 @@ Requires(postun):   /sbin/ldconfig
 %description pixeltool
 This package contains the pixeltool tool
 
+%package qtdiag
+Summary:    The qtdiag tool
+Group:      Qt/Qt
+Requires:   %{name} = %{version}-%{release}
+Requires(post):     /sbin/ldconfig
+Requires(postun):   /sbin/ldconfig
+
+%description qtdiag
+This package contains the qtdiag tool
+
 #%package kmap2qmap
 #Summary:    The kmap2qmap tool
 #Group:      Qt/Qt
@@ -226,6 +236,10 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %files pixeltool
 %defattr(-,root,root,-)
 %{_qt5_bindir}/pixeltool
+
+%files qtdiag
+%defattr(-,root,root,-)
+%{_qt5_bindir}/qtdiag
 
 #%files kmap2qmap
 #%defattr(-,root,root,-)
