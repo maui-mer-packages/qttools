@@ -49,15 +49,15 @@ Requires(postun):   /sbin/ldconfig
 %description pixeltool
 This package contains the pixeltool tool
 
-%package kmap2qmap
-Summary:    The kmap2qmap tool
-Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
-Requires(post):     /sbin/ldconfig
-Requires(postun):   /sbin/ldconfig
-
-%description kmap2qmap
-This package contains the kmap2qmap tool
+#%package kmap2qmap
+#Summary:    The kmap2qmap tool
+#Group:      Qt/Qt
+#Requires:   %{name} = %{version}-%{release}
+#Requires(post):     /sbin/ldconfig
+#Requires(postun):   /sbin/ldconfig
+#
+#%description kmap2qmap
+#This package contains the kmap2qmap tool
 
 %package qdbus
 Summary:    The qdbus and qdbusviewer tool
@@ -227,9 +227,9 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %defattr(-,root,root,-)
 %{_qt5_bindir}/pixeltool
 
-%files kmap2qmap
-%defattr(-,root,root,-)
-%{_qt5_bindir}/kmap2qmap
+#%files kmap2qmap
+#%defattr(-,root,root,-)
+#%{_qt5_bindir}/kmap2qmap
 
 %files qdbus
 %defattr(-,root,root,-)
