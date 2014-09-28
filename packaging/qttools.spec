@@ -1,12 +1,17 @@
 %define keep_static 1
-Name:       qt5-qttools
+
+# Package prefix
+%define pkgname qt5-qttools
+
+
+Name:       qttools
 Summary:    Development tools for Qt
-Version:    5.0.2
-Release:    1%{?dist}
+Version:    5.3.2
+Release:    1
 Group:      Qt/Qt
 License:    LGPLv2.1 with exception or GPLv3
-URL:        http://qt.nokia.com
-Source:     %{name}-%{version}.tar.bz2
+URL:        http://qt.io
+Source:     %{name}-%{version}.tar.xz
 BuildRequires:  qt5-qtgui-devel
 BuildRequires:  qt5-qtnetwork-devel
 BuildRequires:  qt5-qtcore-devel
@@ -26,153 +31,177 @@ BuildRequires:  fdupes
 Qt is a cross-platform application and UI framework. Using Qt, you can
 write web-enabled applications once and deploy them across desktop,
 mobile and embedded systems without rewriting the source code.
-.
+
 This package contains additional tools for building Qt applications.
 
-%package linguist
+
+%package -n qt5-qttools
+Summary:    Development tools for Qt
+Group:      Qt/Qt
+
+%description -n qt5-qttools
+Qt is a cross-platform application and UI framework. Using Qt, you can
+write web-enabled applications once and deploy them across desktop,
+mobile and embedded systems without rewriting the source code.
+
+This package contains additional tools for building Qt applications.
+
+
+%package -n qt5-qttools-linguist
 Summary:    The linguist tools
 Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{pkgname} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
-%description linguist
+%description -n qt5-qttools-linguist
 This package contains the linguist tool
 
-%package pixeltool
+
+%package -n qt5-qttools-pixeltool
 Summary:    The pixeltool tool
 Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{pkgname} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
-%description pixeltool
+%description -n qt5-qttools-pixeltool
 This package contains the pixeltool tool
 
-%package qtdiag
+
+%package -n qt5-qttools-qtdiag
 Summary:    The qtdiag tool
 Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{pkgname} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
-%description qtdiag
+%description -n qt5-qttools-qtdiag
 This package contains the qtdiag tool
 
-#%package kmap2qmap
+
+#%package -n qt5-qttools-kmap2qmap
 #Summary:    The kmap2qmap tool
 #Group:      Qt/Qt
-#Requires:   %{name} = %{version}-%{release}
+#Requires:   %{pkgname} = %{version}-%{release}
 #Requires(post):     /sbin/ldconfig
 #Requires(postun):   /sbin/ldconfig
 #
-#%description kmap2qmap
+#%description -n qt5-qttools-kmap2qmap
 #This package contains the kmap2qmap tool
 
-%package qdbus
+
+%package -n qt5-qttools-qdbus
 Summary:    The qdbus and qdbusviewer tool
 Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{pkgname} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
-%description qdbus
+%description -n qt5-qttools-qdbus
 This package contains the qdbus and qdbusviewer tool
 
-%package paths
+
+%package -n qt5-qttools-paths
 Summary:    Command line client for standard paths
 Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{pkgname} = %{version}-%{release}
 
-%description paths
+%description -n qt5-qttools-paths
 This package contains the qtpaths tool.
 
-%package qtuitools
+
+%package -n qt5-qttools-qtuitools
 Summary:    The QtUiTools library
 Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{pkgname} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
-%description qtuitools
+%description -n qt5-qttools-qtuitools
 This package contains the QtUiTools library
 
-%package qtuitools-devel
+
+%package -n qt5-qttools-qtuitools-devel
 Summary:    Development files for QtUiTools
 Group:      Qt/Qt
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
  
-%description qtuitools-devel
+%description -n qt5-qttools-qtuitools-devel
 This package contains the files necessary to develop
 applications that use QtUiTools
 
 
-%package qtclucene
+%package -n qt5-qttools-qtclucene
 Summary:    The QtCLucene library
 Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{pkgname} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
-%description qtclucene
+%description -n qt5-qttools-qtclucene
 This package contains the QtCLucene library
 
-%package qtclucene-devel
+
+%package -n qt5-qttools-qtclucene-devel
 Summary:    Development files for QtLucense
 Group:      Qt/Qt
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
  
-%description qtclucene-devel
+%description -n qt5-qttools-qtclucene-devel
 This package contains the files necessary to develop
 applications that use QtCLucene
 
-%package qtdesigner
+
+%package -n qt5-qttools-qtdesigner
 Summary: The Qt designer libraries
 Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{pkgname} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
-%package qthelp
+%description -n qt5-qttools-qtdesigner
+This package contains the files necessary to develop
+applications that use QtDesigner
+
+
+%package -n qt5-qttools-qthelp
 Summary:    The QtHelp library
 Group:      Qt/Qt
-Requires:   %{name} = %{version}-%{release}
+Requires:   %{pkgname} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
-%description qthelp
+%description -n qt5-qttools-qthelp
 This package contains the QtHelp library
 
-%package qthelp-devel
+
+%package -n qt5-qttools-qthelp-devel
 Summary:    Development files for QtHelp
 Group:      Qt/Qt
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
  
-%description qthelp-devel
+%description -n qt5-qttools-qthelp-devel
 This package contains the files necessary to develop
 applications that use QtHelp
 
-%description qtdesigner
-This package contains the files necessary to develop
-applications that use QtDesigner
 
-%package qtdesigner-devel
+%package -n qt5-qttools-qtdesigner-devel
 Summary:    Development files for QtDesigner
 Group:      Qt/Qt
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
  
-%description qtdesigner-devel
+%description -n qt5-qttools-qtdesigner-devel
 This package contains the files necessary to develop
 applications that use QtDesigner
 
 
-
 %prep
-%setup -q -n %{name}-%{version}/upstream
+%setup -q -n %{name}-%{version}
 
 %build
 export QTDIR=/usr/share/qt5
@@ -192,39 +221,36 @@ rm -rf %{buildroot}/%{_includedir}/qt5/Qt
 
 # Fix wrong path in pkgconfig files
 find %{buildroot}%{_libdir}/pkgconfig -type f -name '*.pc' \
--exec perl -pi -e "s, -L%{_builddir}/?\S+,,g" {} \;
+    -exec perl -pi -e "s, -L%{_builddir}/?\S+,,g" {} \;
 # Fix wrong path in prl files
 find %{buildroot}%{_libdir} -type f -name '*.prl' \
--exec sed -i -e "/^QMAKE_PRL_BUILD_DIR/d;s/\(QMAKE_PRL_LIBS =\).*/\1/" {} \;
+    -exec sed -i -e "/^QMAKE_PRL_BUILD_DIR/d;s/\(QMAKE_PRL_LIBS =\).*/\1/" {} \;
+
 
 %fdupes %{buildroot}/%{_libdir}
 %fdupes %{buildroot}/%{_includedir}
 %fdupes %{buildroot}/%{_datadir}
 
 
-%post
+%post -n qt5-qttools
 /sbin/ldconfig
-%postun
+%postun -n qt5-qttools
 /sbin/ldconfig
 
-%post qtuitools -p /sbin/ldconfig
-%postun qtuitools -p /sbin/ldconfig
+%post -n qt5-qttools-qtuitools -p /sbin/ldconfig
+%postun -n qt5-qttools-qtuitools -p /sbin/ldconfig
 
-%post qthelp -p /sbin/ldconfig
-%postun qthelp -p /sbin/ldconfig
+%post -n qt5-qttools-qthelp -p /sbin/ldconfig
+%postun -n qt5-qttools-qthelp -p /sbin/ldconfig
 
-%post qtclucene -p /sbin/ldconfig
-%postun qtclucene -p /sbin/ldconfig
+%post -n qt5-qttools-qtclucene -p /sbin/ldconfig
+%postun -n qt5-qttools-qtclucene -p /sbin/ldconfig
 
-%post qtdesigner -p /sbin/ldconfig
-%postun qtdesigner -p /sbin/ldconfig
+%post -n qt5-qttools-qtdesigner -p /sbin/ldconfig
+%postun -n qt5-qttools-qtdesigner -p /sbin/ldconfig
 
 
-
-%files
-%defattr(-,root,root,-)
-
-%files linguist
+%files -n qt5-qttools-linguist
 %defattr(-,root,root,-)
 %{_qt5_bindir}/lconvert
 %{_qt5_bindir}/linguist
@@ -233,31 +259,31 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %{_datadir}/qt5/phrasebooks/
 %{_libdir}/cmake/Qt5Linguist*
 
-%files pixeltool
+%files -n qt5-qttools-pixeltool
 %defattr(-,root,root,-)
 %{_qt5_bindir}/pixeltool
 
-%files qtdiag
+%files -n qt5-qttools-qtdiag
 %defattr(-,root,root,-)
 %{_qt5_bindir}/qtdiag
 
-#%files kmap2qmap
+#%files -n qt5-qttools-kmap2qmap
 #%defattr(-,root,root,-)
 #%{_qt5_bindir}/kmap2qmap
 
-%files qdbus
+%files -n qt5-qttools-qdbus
 %defattr(-,root,root,-)
 %{_qt5_bindir}/qdbus
 %{_qt5_bindir}/qdbusviewer
 
-%files paths
+%files -n qt5-qttools-paths
 %defattr(-,root,root,-)
 %{_qt5_bindir}/qtpaths
 
-%files qtuitools
+%files -n qt5-qttools-qtuitools
 %defattr(-,root,root,-)
 
-%files qtuitools-devel
+%files -n qt5-qttools-qtuitools-devel
 %defattr(-,root,root,-)
 %{_includedir}/qt5/QtUiTools/
 %{_libdir}/libQt5UiTools.prl
@@ -267,11 +293,11 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %{_datadir}/qt5/mkspecs/modules/qt_lib_uitools_private.pri
 %{_libdir}/cmake/Qt5UiTools/
 
-%files qthelp
+%files -n qt5-qttools-qthelp
 %defattr(-,root,root,-)
 %{_libdir}/libQt5Help.so.*
 
-%files qthelp-devel
+%files -n qt5-qttools-qthelp-devel
 %defattr(-,root,root,-)
 %{_qt5_bindir}/assistant
 %{_qt5_bindir}/qhelpgenerator
@@ -285,11 +311,11 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %{_datadir}/qt5/mkspecs/modules/qt_lib_help_private.pri
 %{_libdir}/cmake/Qt5Help/
 
-%files qtclucene
+%files -n qt5-qttools-qtclucene
 %defattr(-,root,root,-)
 %{_libdir}/libQt5CLucene.so.*
 
-%files qtclucene-devel
+%files -n qt5-qttools-qtclucene-devel
 %defattr(-,root,root,-)
 %{_includedir}/qt5/QtCLucene/
 %{_libdir}/libQt5CLucene.prl
@@ -297,12 +323,12 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %{_libdir}/pkgconfig/Qt5CLucene.pc
 %{_datadir}/qt5/mkspecs/modules/qt_lib_clucene_private.pri
 
-%files qtdesigner
+%files -n qt5-qttools-qtdesigner
 %defattr(-,root,root,-)
 %{_qt5_bindir}/designer
 %{_libdir}/libQt5Designer*.so.*
 
-%files qtdesigner-devel
+%files -n qt5-qttools-qtdesigner-devel
 %defattr(-,root,root,-)
 %{_includedir}/qt5/QtDesigner/
 %{_includedir}/qt5/QtDesignerComponents/
@@ -311,5 +337,3 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %{_datadir}/qt5/mkspecs/modules/qt_lib_designer*.pri
 %{_libdir}/pkgconfig/Qt5Designer*.pc
 %{_libdir}/cmake/Qt5Designer/
-
-
